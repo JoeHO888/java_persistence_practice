@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 
-    List<Employee> findByLastName(String lastName);
+//    List<Employee> getName(String name);
 }

@@ -15,18 +15,18 @@ public class EmployeeResource {
     private final Logger log = Logger.getLogger(this.getClass().getName());
 
     @Autowired
-    private EmployeeResource employeeService;
+    private EmployeeService employeeService;
     @Autowired
     private EmployeeRepository repository;
 
     @GetMapping(produces = {"application/json"})
     public List<Employee> list() {
-        return employeeService.list();
+        return (List<Employee>) repository.findAll();
     }
 
     @PostMapping(produces = {"application/json"})
     public void add(@RequestBody Employee employee) {
-        employeeService.add(employee);
+//        employeeService.add(employee);
         repository.save(employee);
     }
 }
