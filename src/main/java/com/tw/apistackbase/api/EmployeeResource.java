@@ -16,6 +16,7 @@ public class EmployeeResource {
 
     @Autowired
     private EmployeeResource employeeService;
+    @Autowired
     private EmployeeRepository repository;
 
     @GetMapping(produces = {"application/json"})
